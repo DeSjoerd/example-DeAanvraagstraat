@@ -1,0 +1,39 @@
+﻿<form name="situatieForm" novalidate ng-submit="situatie.onSubmit(situatie.situatieModel)">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Situatie</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-6 col-sm-push-6">
+                    <p>Vul hier uw gegevens in om een berekening te doen</p>
+                </div>
+                <div class="col-sm-6 col-sm-pull-6" ng-class="{ 'has-error': situatieForm.inputInkomen.$invalid }">
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label for="inputInkomen" class="control-label">Bruto maandloon</label>
+                            <input type="number"
+                                   class="form-control"
+                                   name="inputInkomen"
+                                   id="inputInkomen"
+                                   ng-model="situatie.situatieModel.inkomen"
+                                   required>
+                        </div>
+                        <div class="form-group col-sm-6" ng-class="{ 'has-error': situatieForm.inputDeeltijd.$invalid }">
+                            <label for="inputDeeltijd" class="control-label">Deeltijdpercentage</label>
+                            <input type="number"
+                                   name="inputDeeltijd"
+                                   class="form-control"
+                                   id="inputDeeltijd"
+                                   ng-model="situatie.situatieModel.deeltijd"
+                                   required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button type="submit" class="btn btn-default" ng-disabled="situatieForm.$invalid">Volgende stap</button>
+        </div>
+    </div>
+</form>
