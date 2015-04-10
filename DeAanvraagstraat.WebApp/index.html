@@ -1,9 +1,58 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-    <title></title>
+    <title>De Aanvraagstraat</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    <!-- styles -->
+
+    <!-- build:css assets/css/lib.css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbuild -->
+    <!-- build:css assets/css/app.css -->
+    <link rel="stylesheet" href="css/app.css" />
+    <!-- endbuild -->
 </head>
 <body>
+    <div id="deaanvraagstraat-app" ng-app="straat.app">
+        <div id="navigation" ng-include="'app/components/navigation/navigation.html'">
+        </div>
+        <div class="container" ui-view></div>
+    </div>
 
+    <!-- Scripts -->
+    <!-- Vendor scripts -->
+    <!-- build:js js/vendor.js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- endbuild -->
+
+    <!-- App scripts -->
+    <!-- build:js js/app.js -->
+    <script src="app/dependencies.module.js"></script>
+
+    <script src="app/app.module.js"></script>
+    <script src="app/app.routes.js"></script>
+
+    <script src="app/1-situatie/situatie.controller.js"></script>
+    <script src="app/2-calculatie/calculatie.controller.js"></script>
+
+    <!-- services -->
+    <script src="app/services/steps.service.js"></script>
+    <script src="app/services/aanvraag.service.js"></script>
+
+    <!-- components -->
+    <script src="app/components/components.module.js"></script>
+
+    <script src="app/components/navigation/navigation.controller.js"></script>
+
+    <!-- inject:templates:js -->
+    <!-- endinject -->
+
+    <!-- endbuild -->
 </body>
 </html>
